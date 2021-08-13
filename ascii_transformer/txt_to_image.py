@@ -40,6 +40,11 @@ class TxtToImage:
         image = Image.new("RGB", (width, height), "grey")
         draw = ImageDraw.Draw(image)
         for i, line in enumerate(lines):
-            for j, symbol in enumerate(line):
-                draw.text((j*gap, i*gap), str(symbol))  # x, y
+            for j, cell in enumerate(line):
+                symbol = cell[0]
+                if len(cell) == 2:
+                    color = tuple(cell[1])
+                    draw.text((j * gap, i * gap), str(symbol), fill=color)  # x, y
+                else:
+                    draw.text((j*gap, i*gap), str(symbol))
         image.save("ascii_image.png")

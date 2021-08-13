@@ -67,22 +67,29 @@ class AsciiTransformer:
         """
         self.image = self.image.convert("L")
 
-    def convert_to_ascii(self):
+    def convert_to_ascii(self, color=False):
         """
         Converts pixels from image to letters based on pixel value.
+        You can save pixel colors for later image conversion.
 
         :return: 2d numpy_array of letters with proper dimensions
         """
-        self.convert_to_grayscale()
-        pixels = self.image.getdata()
+        intensity = self.image.convert("L")
+        pixels = intensity.getdata()
         new_pixels = [self.symbols_list[intensity_to_iter_index(pixel, self.symbols_list)] for pixel in pixels]
         symbols_array = np.array(new_pixels)
-        symbols_array = np.reshape(symbols_array, (self.new_height, self.new_width))
+        if color:
+            color_pixels = np.array(self.image.getdata())
+            symbols_array = np.array(list(zip(symbols_array, color_pixels)), dtype=object)
+            symbols_array = np.reshape(symbols_array, (self.new_height, self.new_width, 2))
+        else:
+            symbols_array = np.reshape(symbols_array, (self.new_height, self.new_width))
         return symbols_array
 
     def save_txt(self):
         """
         Saves ascii art to txt file.
+
         :return: Returns nothing
         """
         symbols_array = self.convert_to_ascii()
@@ -91,13 +98,14 @@ class AsciiTransformer:
                 f.write("".join(line))
                 f.write("\n")
 
-    def save_image(self):
+    def save_image(self, color=False):
         """
         Saves ascii art to image.
+        You can save image with colors
 
         :return: Returns nothing
         """
-        symbols_array = self.convert_to_ascii()
+        symbols_array = self.convert_to_ascii(color)
         converter = TxtToImage()
         converter.load_data(symbols_array)
         converter.imgfy_ascii()
