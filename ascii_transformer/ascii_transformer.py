@@ -20,7 +20,9 @@ def intensity_to_iter_index(pixel_val, iterable):
 class AsciiTransformer:
     def __init__(self):
         self.image = None
-        self.symbols_list = [i for i in "@%#*+=-:. "]
+        # could be used " .:-=+*#%@"
+        self.symbols_list = [i for i in "@MBHENR#KWXDFPQASUZbdehx*8Gm&04LOVYkpq5Tagns69owz$CIu23Jcfry%1v7l+it[] {" \
+                                        "}?j|()=~!-/<>\"^_';,:`. "]
         self.new_width = None
         self.new_height = None
 

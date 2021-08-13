@@ -27,5 +27,16 @@ asciify.py [-h] [-w WIDTH] [-i] [-c] [-s SYMBOLS_LIST] image_path
 
 ### Example:
 ```bash
-python3 asciify.py pika.png -i -c -w 100 -s jfkd
+python3 asciify.py shore.jpeg -i -c -w 400
 ```
+![GitHub Logo](shore_ascii.png)
+
+```bash
+python3 asciify.py arrow.jpeg -i -c -w 100 -s jfkd
+```
+![GitHub Logo](arrow_ascii.png)
+
+```bash
+python3 asciify.py feather.jpeg -i -c -w 400 -s adsfbcxzdgf[]/.
+```
+![GitHub Logo](feather_ascii.png)
