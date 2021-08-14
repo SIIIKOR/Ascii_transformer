@@ -37,7 +37,7 @@ class TxtToImage:
             lines = self.symbols_array
         height = gap * len(lines)
         width = gap * len(lines[0])
-        image = Image.new("RGB", (width, height), "grey")
+        image = Image.new("RGB", (width, height), "black")
         draw = ImageDraw.Draw(image)
         for i, line in enumerate(lines):
             for j, cell in enumerate(line):
@@ -47,4 +47,4 @@ class TxtToImage:
                     draw.text((j * gap, i * gap), str(symbol), fill=color)  # x, y
                 else:
                     draw.text((j*gap, i*gap), str(symbol))
-        image.save("ascii_image.png")
+        image.save("Mao_Zedong_portrait_ascii.png")
