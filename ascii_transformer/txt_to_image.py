@@ -24,10 +24,12 @@ class TxtToImage:
         """
         self.symbols_array = data
 
-    def imgfy_ascii(self, gap=10):
+    def imgfy_ascii(self, b_color="black", gap=10):
         """
         Converts txt file to image. Original purpose of this method is to save ascii art as images.
 
+        :param gap: Int indicating gap between symbols
+        :param b_color: String indicating color of the image background color
         :return: Returns nothing
         """
         if self.path:
@@ -37,7 +39,7 @@ class TxtToImage:
             lines = self.symbols_array
         height = gap * len(lines)
         width = gap * len(lines[0])
-        image = Image.new("RGB", (width, height), "black")
+        image = Image.new("RGB", (width, height), b_color)
         draw = ImageDraw.Draw(image)
         for i, line in enumerate(lines):
             for j, cell in enumerate(line):
@@ -47,4 +49,4 @@ class TxtToImage:
                     draw.text((j * gap, i * gap), str(symbol), fill=color)  # x, y
                 else:
                     draw.text((j*gap, i*gap), str(symbol))
-        image.save("Mao_Zedong_portrait_ascii.png")
+        image.save("ascii_image.png")

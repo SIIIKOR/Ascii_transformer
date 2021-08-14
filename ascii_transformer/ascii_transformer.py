@@ -48,7 +48,7 @@ class AsciiTransformer:
                 symbols_list.append(i)
             self.symbols_list = symbols_list
 
-    def resize_image(self, new_width):
+    def resize_image(self, new_width=100):
         """
         Resizes image. Each pixel corresponds to letter.
 
@@ -100,14 +100,16 @@ class AsciiTransformer:
                 f.write("".join(line))
                 f.write("\n")
 
-    def save_image(self, color=False):
+    def save_image(self, color=False, b_color="black"):
         """
         Saves ascii art to image.
         You can save image with colors
 
+        :param color: Boolean indicating whether image will be colored or not
+        :param b_color: String with name of the color which will be used on the background of the image
         :return: Returns nothing
         """
         symbols_array = self.convert_to_ascii(color)
         converter = TxtToImage()
         converter.load_data(symbols_array)
-        converter.imgfy_ascii()
+        converter.imgfy_ascii(b_color)

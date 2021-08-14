@@ -8,6 +8,7 @@ def main():
     parser.add_argument("-w", "--width", help="Insert desired image width", type=int, default=100)
     parser.add_argument("-i", "--image", help="Choose IMAGE mode else TXT mode", action='store_true')
     parser.add_argument("-c", "--color", help="Ascii art in IMAGE mode will have colors", action='store_true')
+    parser.add_argument("-bc", "--background_color", help="Insert desired background color", type=str, default="black")
     parser.add_argument("-s", "--symbols_list", help="Insert symbols_list which will be used in ascii art", type=str)
 
     args = parser.parse_args()
@@ -16,7 +17,7 @@ def main():
     trans.resize_image(args.width)
     trans.set_symbols(args.symbols_list)
     if args.image:
-        trans.save_image(args.color)
+        trans.save_image(args.color, args.background_color)
     else:
         trans.save_txt()
 
