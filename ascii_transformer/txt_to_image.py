@@ -28,8 +28,8 @@ class TxtToImage:
         """
         Converts txt file to image. Original purpose of this method is to save ascii art as images.
 
-        :param gap: Int indicating gap between symbols
         :param b_color: String indicating color of the image background color
+        :param gap: Int indicating gap between symbols
         :return: Returns nothing
         """
         if self.path:

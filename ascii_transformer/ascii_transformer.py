@@ -74,6 +74,7 @@ class AsciiTransformer:
         Converts pixels from image to letters based on pixel value.
         You can save pixel colors for later image conversion.
 
+        :param color: Boolean indicating whether image will have colors or not
         :return: 2d numpy_array of letters with proper dimensions
         """
         intensity = self.image.convert("L")
