@@ -1,6 +1,7 @@
 ## Asciify
 Program that allows you to convert image to ascii art.
 you can save it in txt file or in png format, in color or not.
+
 ![GitHub Logo](Mao_Zedong_portrait_ascii.png)
 
 ## Usage
