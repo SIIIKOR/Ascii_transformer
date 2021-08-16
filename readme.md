@@ -37,11 +37,20 @@ python3 python3 asciify.py bird.jpg -i -c -w 200
 ![GitHub Logo](bird_ascii.png)
 
 ```bash
-python3 asciify.py doggo.jpg -i -s  .:-=+*#%@ -w 150 -bc grey
+python3 asciify.py puffin.jpg -i -s  .:-=+*#%@ -w 150 -bc grey
 ```
-![GitHub Logo](doggo_ascii.png)
+![GitHub Logo](puffin_ascii.png)
 
 ```bash
-python3 asciify.py owl.jpg -i -c -s 0123456789 -w 200
+python3 asciify.py parrot.jpg -i -c -s 0123456789 -w 200
 ```
-![GitHub Logo](owl_ascii.png)
+![GitHub Logo](parrot_ascii.png)
+
+### links to photos:
+https://unsplash.com/photos/roswbY5tHH8
+
+https://unsplash.com/photos/x6_VdEkH3NQ
+
+https://unsplash.com/photos/mpw37yXc_WQ
+
+https://unsplash.com/photos/VdW5_6Q5eFY
