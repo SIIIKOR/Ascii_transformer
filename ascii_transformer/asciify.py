@@ -5,7 +5,8 @@ from ascii_transformer import AsciiTransformer
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("image_path", help="Path of image to be transformed into ascii art.", type=str)
-    parser.add_argument("-w", "--width", help="Insert desired image width", type=int, default=100)
+    parser.add_argument("-w", "--width", help="Insert desired amount of pixels on width|width resolution = "
+                                              "input_width*10", type=int, default=100)
     parser.add_argument("-i", "--image", help="Choose IMAGE mode else TXT mode", action='store_true')
     parser.add_argument("-c", "--color", help="Ascii art in IMAGE mode will have colors", action='store_true')
     parser.add_argument("-bc", "--background_color", help="Insert desired background color", type=str, default="black")

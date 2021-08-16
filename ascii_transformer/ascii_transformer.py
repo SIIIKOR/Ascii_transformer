@@ -52,7 +52,7 @@ class AsciiTransformer:
         """
         Resizes image. Each pixel corresponds to letter.
 
-        :param new_width: Desired width of the resized image
+        :param new_width: Desired width of the resized image | amount of new pixel on width | symbols on width
         :return: Returns nothing
         """
         width, height = self.image.size
