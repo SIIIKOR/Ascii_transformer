@@ -21,7 +21,7 @@ class AsciiTransformer:
     def __init__(self):
         self.image = None
         # could be used " .:-=+*#%@"
-        self.symbols_list = [i for i in "@MBHENR#KWXDFPQASUZbdehx*8Gm&04LOVYkpq5Tagns69owz$CIu23Jcfry%1v7l+it[] {" \
+        self.symbols_list = [i for i in "@MBHENR#KWXDFPQASUZbdehx*8Gm&04LOVYkpq5Tagns69owz$CIu23Jcfry%1v7l+it[] {"
                                         "}?j|()=~!-/<>\"^_';,:`. "]
         self.new_width = None
         self.new_height = None
