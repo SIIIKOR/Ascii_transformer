@@ -56,7 +56,7 @@ class AsciiTransformer:
         :return: Returns nothing
         """
         width, height = self.image.size
-        aspect_ratio = width / height
+        aspect_ratio = height / width
         self.new_width = new_width
         self.new_height = int(new_width * aspect_ratio)
         self.image = self.image.resize((self.new_width, self.new_height))
